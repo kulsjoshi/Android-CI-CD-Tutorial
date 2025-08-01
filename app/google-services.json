@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419061687423",
+    "project_id": "android-ci-cd-integration",
+    "storage_bucket": "android-ci-cd-integration.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419061687423:android:f5ff726353d067c4f54b4a",
+        "android_client_info": {
+          "package_name": "com.kuldeep.androidci_cdintegration"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4klwKqSv2vq8J54CIn4ig760gTJ9pv_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
