@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -9,11 +10,14 @@ android {
     compileSdk = 36
 
     defaultConfig {
+        val versionCode = project.findProperty("VERSION_CODE")?.toString()?.toInt() ?: 1
+        val versionName = project.findProperty("VERSION_NAME")?.toString() ?: "1.0.0"
+
         applicationId = "com.kuldeep.androidci_cdintegration"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        this.versionCode = versionCode
+        this.versionName = versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,4 +60,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
 }
