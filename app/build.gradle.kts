@@ -10,11 +10,14 @@ android {
     compileSdk = 36
 
     defaultConfig {
+        val versionCode = project.findProperty("VERSION_CODE")?.toString()?.toInt() ?: 1
+        val versionName = project.findProperty("VERSION_NAME")?.toString() ?: "1.0.0"
+
         applicationId = "com.kuldeep.androidci_cdintegration"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        this.versionCode = versionCode
+        this.versionName = versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
